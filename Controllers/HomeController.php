@@ -19,12 +19,20 @@ class HomeController extends Controller {
 	}
 
 	public function index() {
-		$array = array();
+		$data = array();
+		$p = new Produtos();
 
-		$usuarios = new Usuarios();
-		$array['lista'] = $usuarios->getAll();
+		$data['list'] = $p->getProdutos();
+
 
 		$this->loadTemplate('home', $array);
+	}
+
+	public function add() {
+		$data = array();
+		
+
+		$this->loadTemplate('add', $array);
 	}
 
 }
