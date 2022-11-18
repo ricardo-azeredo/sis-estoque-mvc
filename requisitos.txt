@@ -10,6 +10,7 @@ Sistema de Estoque
 - Cadastro de produtos: 
 -- busca por codigo ou nome;
 -- terá imagem de cada produto;
+--Antes de cadastrar, verificar se o código do produto já existe.
 
 - Relatório de produtos:
 -- Exibi o quantidade e a quantidade minima do produto;

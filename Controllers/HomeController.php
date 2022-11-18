@@ -30,7 +30,19 @@ class HomeController extends Controller {
 
 	public function add() {
 		$data = array();
-		
+		$p = new Produtos();
+
+		if(!empty($_POST['codigo'])) {
+			$codigo = $_POST['codigo'];
+			$produto = $_POST['produto'];
+			$preco = $_POST['preco'];
+			$quantidade = $_POST['quantidade'];
+			$min_quantidade = $_POST['min_quantidade'];
+
+			$p->addProduto($codigo,$produto, $preco, $quantidade, $min_quantidade);
+			header("Location: ".BASE_URL);
+			exit;
+		}
 
 		$this->loadTemplate('add', $array);
 	}
