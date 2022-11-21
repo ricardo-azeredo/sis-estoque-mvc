@@ -30,4 +30,10 @@ class LoginController extends Controller {
         
         $this->loadTemplate('login', $data);
     }
+
+    public function Sair() {
+        unset($_SESSION['token']);
+        header("LOcation: ".BASE_URL."login");
+        exit;
+    }
 }
