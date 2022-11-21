@@ -79,6 +79,18 @@ class Produtos extends Model {
         }
     }
 
+    public function getLowQuantityProducts() {
+        $array = array();
+
+        $sql = "SELECT * FROM produtos WHERE quantidade < min_quantidade";
+        $sql= $this->db->query($sql);
+
+        if($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
+    }
 
 }
 

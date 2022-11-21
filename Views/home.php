@@ -2,6 +2,10 @@
 <h1>Home</h1>
 
 <a href="<?php echo BASE_URL;?>home/add">Adicionar Produto</a>
+<br>
+
+<a href="<?php echo BASE_URL; ?>/relatorio">Relatório</a>
+<br>
 
 <form method="get">
 	<fieldset>
