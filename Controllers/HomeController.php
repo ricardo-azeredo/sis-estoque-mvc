@@ -46,4 +46,26 @@ class HomeController extends Controller {
 		$this->loadTemplate('add', $data);
 	}
 
+	public function editar($id){
+		$data = array();
+		$p = new Produtos();
+
+		if(!empty($_POST['codigo'])) {
+			$codigo = $_POST['codigo'];
+			$produto = $_POST['produto'];
+			$preco = $_POST['preco'];
+			$quantidade = $_POST['quantidade'];
+			$min_quantidade = $_POST['minima'];
+
+			$p->editProduto($codigo,$produto, $preco, $quantidade, $min_quantidade, $id);
+			header("Location: ".BASE_URL);
+			exit;
+		}
+
+		$data['info'] = $p->getProduto($id);
+
+
+		$this->loadTemplate('editar', $data);
+	}
+
 }

@@ -21,7 +21,7 @@
 			<td>R$ <?php echo number_format($item['preco'],2,',','.'); ?></td>
 			<td><?php echo $item['quantidade']; ?></td>
 			<td>
-				<a href="<?php echo BASE_URL;?>home/edit/<?php echo $item['id'];?>">Editar</a>
+				<a href="<?php echo BASE_URL;?>home/editar/<?php echo $item['id'];?>">Editar</a>
 			</td>
 			
 		</tr>
