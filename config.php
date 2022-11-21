@@ -3,13 +3,13 @@ require 'environment.php';
 
 $config = array();
 if(ENVIRONMENT == 'development') {
-	define("BASE_URL", "http://localhost/sis-estoque-mvc/");
+	define("BASE_URL", "http://localhost:8888/sis-estoque-mvc/");
 	$config['dbname'] = 'estoque_db';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = 'root';
 } else {
-	define("BASE_URL", "http://localhost/sis-estoque-mvc/");
+	define("BASE_URL", "http://localhost:8888/sis-estoque-mvc/");
 	$config['dbname'] = 'estoque_db';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';

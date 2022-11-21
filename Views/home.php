@@ -1,3 +1,4 @@
+
 <h1>Home</h1>
 
 <h3>Lista dos Produtos</h3>
@@ -13,7 +14,7 @@
 		<th>Qtd.</th>
 		<th>Ações</th>
 	</tr>
-	<?php foreach($lista as $item) : ?>
+	<?php foreach($viewData as $item) : ?>
 		<tr>
 			<td><?php echo $item['codigo']; ?></td>
 			<td><?php echo $item['produto']; ?></td>

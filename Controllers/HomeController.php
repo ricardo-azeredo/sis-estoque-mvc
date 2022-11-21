@@ -3,15 +3,15 @@ namespace Controllers;
 
 use \Core\Controller;
 use \Models\Usuarios;
+use \Models\Produtos;
 
 class HomeController extends Controller {
 
 	private $user;
 
 	public function __construct() {
-		parent::__construct();
-
-		$this->user = new User();
+		
+		$this->user = new Usuarios();
 		if(!$this->user->checkLogin()) {
 			header("Location: ".BASE_URL."login");
 			exit;
@@ -23,28 +23,27 @@ class HomeController extends Controller {
 		$p = new Produtos();
 
 		$data['list'] = $p->getProdutos();
-
-
-		$this->loadTemplate('home', $array);
+		
+		$this->loadTemplate('home', $data['list']);
 	}
 
 	public function add() {
 		$data = array();
-		$p = new Produtos();
+		$p = new Produtos(); 
 
 		if(!empty($_POST['codigo'])) {
 			$codigo = $_POST['codigo'];
 			$produto = $_POST['produto'];
 			$preco = $_POST['preco'];
 			$quantidade = $_POST['quantidade'];
-			$min_quantidade = $_POST['min_quantidade'];
+			$min_quantidade = $_POST['minima'];
 
-			$p->addProduto($codigo,$produto, $preco, $quantidade, $min_quantidade);
+			$p->addProdutos($codigo,$produto, $preco, $quantidade, $min_quantidade);
 			header("Location: ".BASE_URL);
 			exit;
 		}
 
-		$this->loadTemplate('add', $array);
+		$this->loadTemplate('add', $data);
 	}
 
 }

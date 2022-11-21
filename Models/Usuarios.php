@@ -3,22 +3,46 @@ namespace Models;
 
 use \Core\Model;
 
+
 class Usuarios extends Model {
 	private $info;
 
-	public function verifyUser($email, $senha){
+	public function __construct() {
+		parent::__construct();
+		$email= "rico@email.com";
 
-		$sql = "SELECT * FROM usuario Where email = :email AND senha = :senha ";
-		$sql = $this->db->prepare($sql);
-		$sql->bindValue(':email',$email);
-		$sql->bindValue(':senha',$senha);
-		$sql->execute();
-
-		if($sql->rowCount() > 0){
-			return true;
-		} else {
-			return false;
+		$consulta = $this->db->query("SELECT * FROM usuarios where email = '$email'");
+		if($consulta->rowCount() == 0){
+			$sql ="INSERT INTO usuarios (nome,email,senha ) VALUES (:nome,:email,:senha)";
+			$sql= $this->db->prepare($sql);
+			$sql->bindValue(':nome',"Ricardo");
+			$sql->bindValue(':email',$email);
+			$sql->bindValue(':senha',password_hash("123",PASSWORD_DEFAULT));
+			$sql->execute();
 		}
+	}
+
+	public function verifyUser($email, $senha){
+		$result = array();
+		$query = $this->db->query("SELECT senha FROM usuarios WHERE email = '$email'");
+		$result = $query->fetch();
+		
+		print_r($result['senha']);
+		if(password_verify($senha,$result['senha'])){
+			$sql = "SELECT * FROM usuarios Where email = :email AND senha = :senha ";
+			$sql = $this->db->prepare($sql);
+			$sql->bindValue(':email',$email);
+			$sql->bindValue(':senha',$result['senha']);
+			$sql->execute();
+	
+			if($sql->rowCount() > 0){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+		
 
 	}
 	
@@ -36,8 +60,9 @@ class Usuarios extends Model {
 	public function checkLogin(){
 		if(!empty($_SESSION['token'])){
 			$token = $_SESSION['token'];
-
-			$sql = "SELECT * FROM usuario Where token = '$token'";
+			
+			$sql = "SELECT * FROM usuarios Where token = :token";
+			//echo $sql;
 			$sql = $this->db->prepare($sql);
 			$sql->bindValue(':token', $token);
 			$sql->execute();

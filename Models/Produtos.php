@@ -1,4 +1,7 @@
 <?php 
+namespace Models;
+
+use \Core\Model;
 
 class Produtos extends Model {
 
@@ -16,6 +19,8 @@ class Produtos extends Model {
     }
 
     public function addProdutos($codigo,$produto, $preco, $quantidade, $min_quantidade) {
+             
+
         $sql = "INSERT INTO produtos(codigo, produto, preco, quantidade, min_quantidade) Values (:codigo,:produto,:preco,:quantidade,:min_quantidade) ";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(":codigo", $codigo);

@@ -2,7 +2,7 @@
 
 <form action="" method="POST">
     <label for="">Código</label>
-    <input type="text" name="cod" >
+    <input type="text" name="codigo" >
     <br>
     
     <label>Produto</label>

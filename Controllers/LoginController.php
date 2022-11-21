@@ -7,7 +7,7 @@ use \Models\Usuarios;
 class LoginController extends Controller {
 
     public function index() {
-        $data =array(
+        $data = array(
             'msg' => ''
         );
 
@@ -15,7 +15,7 @@ class LoginController extends Controller {
             $email = $_POST['email'];
             $senha = $_POST['senha'];
 
-            $users = new User();
+            $users = new Usuarios();
             
             if($users->verifyUser($email,$senha)){
                 $token = $users->createToken($email);
