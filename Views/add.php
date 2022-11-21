@@ -10,7 +10,7 @@
     <br>
 
     <label>Preço</label>
-    <input type="text" name="preco" required>
+    <input type="text" name="preco" class="preco" required>
     <br>
 
     <label>Quantidade</label>

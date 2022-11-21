@@ -6,16 +6,31 @@ Sistema de Estoque
 - Usar html semântico;
 - Usar o bootstrap para o layout.
 - Usar o javascript quando necessário.
+- criar um template principal para as páginas;
+- Criar um menu dinâmico conforme a página;
+- separa o javascript, css, imagens e ícones na pasta assets; 
 
-- Cadastro de produtos: 
+- Listar de produtos: 
 -- busca por codigo ou nome;
+-- Inicial a página com o cursor na busca;
 -- terá imagem de cada produto;
---Antes de cadastrar, verificar se o código do produto já existe.
+-- Antes de cadastrar, verificar se o código do produto já existe;
+-- Exibir as imagens dos produtos exibidos;
+
+- Cadastrar produtos:
+-- add os dados dos produtos;
+-- add imagem para cada produto;
+-- Usar validação nos campos (javascript e PHP).
+
+- Editar produtos:
+-- Exibir os dados dos campos vindo do banco de dados;
+-- Alterar os campos produtos;
+-- Verificar se já existe o código do produto cadastrado;
 
 - Relatório de produtos:
--- Exibi o quantidade e a quantidade minima do produto;
--- gerar pdf e imprimir;
+-- Exibir no relatório, os itens onde a quantidade for menor que a quantidade minima do produto. Exibir, também, a diferença entre elas;
+-- gerar pdf e imprimir em botões diferentes;
 
 usuario terá o nome, email, senha, token e avatar;
 
-produtos terá o código, o nome, preço, quantidade (em float para usar em kilos, por exemplo), minima quantidade em estoque
+produtos terá o código, o nome, preço, quantidade (em float para usar em kilos, por exemplo), minima quantidade em estoque;

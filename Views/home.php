@@ -36,6 +36,3 @@
 	<?php endforeach; ?>	
 </table>
 
-<script type="text/javascript">
-	document.querySelector('#busca').focus();
-</script>
