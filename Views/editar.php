@@ -1,7 +1,7 @@
 <h1>Editar Produto</h1>
-<a href="<?php echo BASE_URL; ?>">Voltar</a><br>
 
-<form action="" method="POST">
+
+<form action="" method="POST" class="form">
     <label for="">Código</label>
     <input type="text" name="codigo" value="<?=$info['codigo'];?>" required />
     <br>

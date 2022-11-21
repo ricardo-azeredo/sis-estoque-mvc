@@ -19,7 +19,13 @@ class HomeController extends Controller {
 	}
 
 	public function index() {
-		$data = array();
+		$data = array(
+			'menu' => array(
+				BASE_URL.'home/add' => 'Adicionar Produtos',
+				BASE_URL.'relatorio' => 'Relatório',
+				BASE_URL.'login/sair'=> 'Sair'
+			)
+		);
 		$p = new Produtos();
 		$search = '';
 		
@@ -29,11 +35,17 @@ class HomeController extends Controller {
 
 		$data['list'] = $p->getProdutos($search);
 		
-		$this->loadTemplate('home', $data['list']);
+		$this->loadTemplate('home', $data);
 	}
 
 	public function add() {
-		$data = array();
+		$data = array(
+			'menu' => array(
+				BASE_URL.'home/add' => 'Adicionar Produtos',
+				BASE_URL.'relatorio' => 'Relatório',
+				BASE_URL.'login/sair'=> 'Sair'
+			)
+		);
 		$p = new Produtos(); 
 
 		if(!empty($_POST['codigo'])) {
@@ -52,7 +64,14 @@ class HomeController extends Controller {
 	}
 
 	public function editar($id){
-		$data = array();
+		$data = array(
+			'menu' => array(
+				BASE_URL.'home' => 'Home',
+				BASE_URL.'home/add' => 'Adicionar Produtos',
+				BASE_URL.'relatorio' => 'Relatório',
+				BASE_URL.'login/sair'=> 'Sair'
+			)
+		);
 		$p = new Produtos();
 
 		if(!empty($_POST['codigo'])) {

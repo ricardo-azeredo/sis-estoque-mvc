@@ -28,7 +28,7 @@ class LoginController extends Controller {
             }
         }
         
-        $this->loadTemplate('login', $data);
+        $this->loadView('login', $data);
     }
 
     public function Sair() {

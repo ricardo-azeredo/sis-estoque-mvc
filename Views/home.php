@@ -1,12 +1,4 @@
 
-<h1>Home</h1>
-
-<a href="<?php echo BASE_URL;?>home/add">Adicionar Produto</a>
-<br>
-
-<a href="<?php echo BASE_URL; ?>relatorio">Relatório</a>
-<br>
-<a href="<?php echo BASE_URL; ?>login/sair">Sair</a>
 
 <form method="get">
 	<fieldset>
@@ -22,7 +14,7 @@
 </form>
 <br><br>
 
-<table border="1" width="100%">
+<table border="0" width="100%">
 	<tr>
 		<th>Cód.</th>
 		<th>Produto</th>
@@ -30,7 +22,7 @@
 		<th>Qtd.</th>
 		<th>Ações</th>
 	</tr>
-	<?php foreach($viewData as $item) : ?>
+	<?php foreach($viewData['list'] as $item) : ?>
 		<tr>
 			<td><?php echo $item['codigo']; ?></td>
 			<td><?php echo $item['produto']; ?></td>
