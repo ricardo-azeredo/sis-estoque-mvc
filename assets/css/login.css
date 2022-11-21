@@ -15,13 +15,13 @@ body{
 
 }
 
-input[type="email"], 
-input[type="password"] {
+input[type=email], 
+input[type=password] {
     width: 100%;
     height: 40px;
     font-size: 13px;
 }
-input[type="submit"] {
+input[type=submit] {
     background-color: #CCCCCC;
     padding: 10px 10px;
     border-radius: 10px;

@@ -41,6 +41,7 @@ class HomeController extends Controller {
 	public function add() {
 		$data = array(
 			'menu' => array(
+				BASE_URL.'home' => 'Home',
 				BASE_URL.'home/add' => 'Adicionar Produtos',
 				BASE_URL.'relatorio' => 'Relatório',
 				BASE_URL.'login/sair'=> 'Sair'

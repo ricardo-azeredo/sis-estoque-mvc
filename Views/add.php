@@ -1,6 +1,6 @@
 <h1>Adicionar Produto</h1>
 
-<form action="" method="POST">
+<form action="" method="POST" class="form">
     <label for="">Código</label>
     <input type="text" name="codigo" >
     <br>

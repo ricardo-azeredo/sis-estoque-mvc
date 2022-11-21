@@ -45,6 +45,10 @@ table th {
     padding: 5px;
 }
 
+table tr:hover td {
+    background-color: #EEE;
+}
+
 table td {
     border: 1px solid #DDDDDD;
     padding: 5px;
@@ -65,4 +69,25 @@ table a:hover {
     width: 100%;
     height: 30px;
     font-size: 1rem;
+}
+
+.form input[type=text],
+.form input[type=email],
+.form select,
+.form textarea {
+    width: 100%;
+    height: 25px;
+    font-size: 1rem;
+    padding-left: 10px;
+    border: 2px solid #DDD;
+    outline: 0;
+    margin: 0.5rem 0;
+}
+
+form input[type=submit] {
+    background-color: #CCCCCC;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
 }
