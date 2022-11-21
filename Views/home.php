@@ -1,10 +1,21 @@
 
 <h1>Home</h1>
 
-<h3>Lista dos Produtos</h3>
-
-
 <a href="<?php echo BASE_URL;?>home/add">Adicionar Produto</a>
+
+<form method="get">
+	<fieldset>
+		<input 
+			type="text" 
+			placeholder="Digite o código ou nome do produto" 
+			name="busca"
+			id="busca"
+			value=<?=(!empty($_GET['busca'])) ? $_GET['busca'] : '' ;?>
+		>
+		
+	</fieldset>
+</form>
+<br><br>
 
 <table border="1" width="100%">
 	<tr>
@@ -27,3 +38,7 @@
 		</tr>
 	<?php endforeach; ?>	
 </table>
+
+<script type="text/javascript">
+	document.querySelector('#busca').focus();
+</script>

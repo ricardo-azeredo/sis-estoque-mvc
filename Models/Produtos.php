@@ -5,11 +5,20 @@ use \Core\Model;
 
 class Produtos extends Model {
 
-    public function getProdutos() {
+    public function getProdutos($search='') {
         $array = array();
+            
+        if(!empty($search)){
+            $sql = "SELECT * FROM produtos WHERE codigo = :codigo or produto LIKE :produto";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(":codigo", $search);
+            $sql->bindValue(":produto", "%$search%");
+            $sql->execute();
+        } else {
+            $sql = "SELECT * FROM Produtos";
+            $sql = $this->db->query($sql);
+        }
 
-        $sql = "SELECT * FROM Produtos";
-        $sql = $this->db->query($sql);
 
         if($sql->rowCount() > 0) {
             $array = $sql->fetchAll();
